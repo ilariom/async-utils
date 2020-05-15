@@ -1,4 +1,4 @@
-# concurrency-utils
+# async-utils
 Asynchronous programming may be though as a type of concurrent programming on single threaded environments, where functions are atomic. This project aims to provide a set of utilities in C++ to simplify dealing with some typical hard-to-follow execution paths and to lift callback organization.
 Any type that takes parametric arguments, do so to allow the underlying callbacks to be called with parameters of these types.
 
