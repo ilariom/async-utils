@@ -33,12 +33,12 @@ inline void waiter::take_order(int priority, const std::function<void()>& fn)
 inline void waiter::serve()
 {
     std::sort(clients_.begin(), clients_.end(), [] (const client& a, const client& b) {
-        return a.priority <= b.priority;
+        return a.priority < b.priority;
     });
     
-    for (client& client : clients_)
+    for (client& c : clients_)
     {
-        client.fn();
+        c.fn();
     }
 }
 
