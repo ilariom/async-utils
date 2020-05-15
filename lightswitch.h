@@ -25,7 +25,7 @@ inline void lightswitch::lights_on()
 {
     counter_++;
     
-    if(counter_ == 0)
+    if (counter_ == 0)
     {
         fn_();
     }
@@ -35,7 +35,7 @@ inline void lightswitch::lights_off()
 {
     counter_--;
     
-    if(counter_ == 0)
+    if (counter_ == 0)
     {
         fn_();
     }

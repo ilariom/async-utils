@@ -35,7 +35,7 @@ private:
 
 inline void conditional_trigger::operator()(bool trigger)
 {
-    if(is_valid_ && (trigger || (cond_ && cond_())))
+    if (is_valid_ && (trigger || (cond_ && cond_())))
     {
         fn_(*this);
     }
