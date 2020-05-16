@@ -5,7 +5,7 @@
 #include <unordered_map>
 #include <functional>
 
-namespace estd
+namespace async
 {
 
 class conditional_trigger
@@ -56,6 +56,6 @@ inline const estd::variant& conditional_trigger::get_property(const std::string&
     return local_storage_.at(key);
 }
 
-} // namespace estd
+} // namespace async
 
 #endif

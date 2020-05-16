@@ -3,7 +3,7 @@
 
 #include <functional>
 
-namespace estd
+namespace async
 {
 
 class one_time_function_execute
@@ -62,6 +62,6 @@ private:
 };
 
 
-} // namespace estd
+} // namespace async
 
 #endif

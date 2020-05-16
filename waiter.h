@@ -5,7 +5,7 @@
 #include <vector>
 #include <algorithm>
 
-namespace estd
+namespace async
 {
 
 class waiter
@@ -42,6 +42,6 @@ inline void waiter::serve()
     }
 }
 
-} // namespace estd
+} // namespace async
 
 #endif

@@ -4,7 +4,7 @@
 #include <functional>
 #include <chrono>
 
-namespace estd
+namespace async
 {
 
 class collapse_function_execute
@@ -89,6 +89,6 @@ private:
     std::function<void()> fn_;
 };
 
-} // namespace estd
+} // namespace async
 
 #endif

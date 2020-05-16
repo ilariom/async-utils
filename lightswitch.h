@@ -3,7 +3,7 @@
 
 #include <functional>
 
-namespace estd
+namespace async
 {
 
 class lightswitch
@@ -41,6 +41,6 @@ inline void lightswitch::lights_off()
     }
 }
 
-} // namespace estd
+} // namespace async
 
 #endif

@@ -3,7 +3,7 @@
 
 #include <functional>
 
-namespace estd
+namespace async
 {
 
 class rendez_vous
@@ -30,6 +30,6 @@ inline void rendez_vous::operator()()
     }
 }
 
-} // namespace estd
+} // namespace async
 
 #endif
