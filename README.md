@@ -9,8 +9,8 @@ A `conditional_trigger` executes the wrapped function only when a condition is m
 int counter = 0;
 
 // Construct by passing the callback first, then the condition
-estd::conditional_trigger ct {
-    [] (estd::conditional_trigger&) {
+async::conditional_trigger ct {
+    [] (async::conditional_trigger&) {
         std::cout << "Triggered!" << std::endl;
     },
     [&counter] () -> bool {
@@ -38,7 +38,7 @@ int n = var.as_integer();
 ```cpp
 std::vector<int> v { 1, 2, 3, 4, 5 };
 
-estd::rendez_vous rv (
+async::rendez_vous rv (
     v.size(),
     [] {
         std::cout << "Triggered!" << std::endl;
@@ -56,7 +56,7 @@ for (auto k = 0; k < v.size(); ++k)
 ## Lightswitch
 `lightswitch`es are triggered when the total count of on / off switched amount to zero
 ```cpp
-estd::lightswitch lsw {
+async::lightswitch lsw {
     [] {
         std::cout << "Triggered!" << std::endl;
     }
@@ -74,6 +74,8 @@ lsw.lights_on();
 ## Waiter
 Sometimes you need to add callbacks with a different order that you expect them to execute. A `waiter` may help in some of these use cases. Just set the function and a priority and let the waiter sort it out.
 ```cpp
+async::waiter w;
+
 w.take_order(
     1,
     [] {
@@ -106,7 +108,7 @@ I'm the third with 10!
 ## One Time Function
 As the name suggests, `one_time_function`s enforce that the wrapped function will be called only once.
 ```cpp
-estd::one_time_function<void> otf {
+async::one_time_function<void> otf {
     [] {
         std::cout << "Triggered!" << std::endl;
     }
@@ -120,7 +122,7 @@ otf();
 ## Collapse Function
 This is a function wrapper that solves the problem of calling the same function before an interval of time as passed.
 ```cpp
-estd::collapse_function<void> cf {
+async::collapse_function<void> cf {
     std::chrono::milliseconds { 1000 },
     [] {
         std::cout << "Triggered!" << std::endl;
